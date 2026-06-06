@@ -29,13 +29,17 @@ while True:
         print('-'*60)
     elif escolha == 2:
         des = float(input('Digite o valor da Despesa R$'))
-        movimentos.append({"tipo" : "Despesa", "valor": des})
-        print('Analisando...')
-        sleep(1)
-        print(f'O saldo atual era de R${saldo:.2f} e foi debitado o valor de R${des:.2f}.')
-        sleep(1)
-        saldo -= des
-        print(f'Saldo atual R${saldo:.2f}')
+        if des > saldo:
+            print(f'Saldo Insuficiente.'
+                  f'Saldo Atual R${saldo:.2f}')
+        else:
+            movimentos.append({"tipo" : "Despesa", "valor": des})
+            print('Analisando...')
+            sleep(1)
+            print(f'O saldo atual era de R${saldo:.2f} e foi debitado o valor de R${des:.2f}.')
+            sleep(1)
+            saldo -= des
+            print(f'Saldo atual R${saldo:.2f}')
         print('-'*60)
     elif escolha == 3:
         sleep(1)
@@ -50,13 +54,17 @@ while True:
         titulo('EXTRATO ATUALIZADO')
         if len(movimentos) == 0:
             print('Sem movimentações na conta!')
+            print('-' * 60)
         else:
             for c in movimentos:
                 print(f'{c["tipo"]:<10} R${c["valor"]:10}')
             print('-'*60)
             print(f'Saldo atual R${saldo:.2f}')
+            print('-' * 60)
     elif escolha == 0:
+        print('-' * 60)
         print('Saindo do sistema...')
+        print('-' * 60)
         sleep(1)
         break
     else:
