@@ -7,6 +7,7 @@ Projeto desenvolvido para revisar os conceitos estudados e auxiliar na organiza�
 - Cadastro de Despesas
 - Consulta de Saldo
 - Extrato com histórico de movimentações
+- Impede despesas maiores que o saldo
 
 # Tecnologias
 - Python 3.13
