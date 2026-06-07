@@ -58,8 +58,10 @@ while True:
             print('Sem movimentações na conta!')
             print('-' * 60)
         else:
-            for c in movimentos:
-                print(f'{c["tipo"]:<10} R${c["valor"]:>10.2f} {c["desc"]}')
+            print(f'{"Nº":<5}{"Tipo":<15}{"Valor (R$)":<15}{"Descrição"}')
+            for i, c in enumerate(movimentos, start=1):
+                print(f'{i:<5}{c["tipo"]:<15}R$ {c["valor"]:>10.2f}   {c["desc"]}')
+                sleep(0.1)
             print('-'*60)
             print(f'Saldo atual R${saldo:.2f}')
             print('-' * 60)
