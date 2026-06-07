@@ -19,7 +19,8 @@ while True:
     sleep(1)
     if escolha == 1:
         rec = float(input('Digite o valor da Receita R$'))
-        movimentos.append({"tipo": "Receita", "valor": rec})
+        desc = str(input('Descrição (salário, presente, freelance: '))
+        movimentos.append({"tipo": "Receita", "valor": rec, "desc": desc})
         print('Analisando...')
         sleep(1)
         print(f'O saldo anterior era de R${saldo:.2f} e foi adicionado R${rec:.2f}.')
@@ -33,7 +34,8 @@ while True:
             print(f'Saldo Insuficiente.'
                   f'Saldo Atual R${saldo:.2f}')
         else:
-            movimentos.append({"tipo" : "Despesa", "valor": des})
+            desc = str(input('Descrição (alimentação, lazer, aluguel: '))
+            movimentos.append({"tipo" : "Despesa", "valor": des, "desc": desc})
             print('Analisando...')
             sleep(1)
             print(f'O saldo atual era de R${saldo:.2f} e foi debitado o valor de R${des:.2f}.')
@@ -57,7 +59,7 @@ while True:
             print('-' * 60)
         else:
             for c in movimentos:
-                print(f'{c["tipo"]:<10} R${c["valor"]:10}')
+                print(f'{c["tipo"]:<10} R${c["valor"]:>10.2f} {c["desc"]}')
             print('-'*60)
             print(f'Saldo atual R${saldo:.2f}')
             print('-' * 60)
