@@ -18,8 +18,9 @@ Projeto desenvolvido para revisar os conceitos estudados e auxiliar na organiza�
 
 # Exemplo do Programa Funcionando
 
+- Menu Inicial - (Selecionando opção 1, adicionando Receita e sua descrição)
 <img width="622" height="537" alt="image" src="https://github.com/user-attachments/assets/333f1ae6-a48d-4fde-8b6b-e85070b27a73" />
-Menu inicial, adicionando receita e a sua descrição
 
+
+- Selecionando a opção 4 (Apresentando Extrato)
 <img width="637" height="477" alt="image" src="https://github.com/user-attachments/assets/a3c79210-b111-4c0d-a5f2-7def47fb3fca" />
-Opção Extrato selecionada e mostrando as movimentações da conta
