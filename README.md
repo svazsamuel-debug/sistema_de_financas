@@ -11,9 +11,14 @@ Projeto desenvolvido para revisar os conceitos estudados e auxiliar na organiza�
 
 # Tecnologias
 - Python 3.13
+- VS Code
+- PyCharm
+- Git
+- Github
 
 # Objetivos
 - Aplicar conceitos de: Função, Listas, Dicionários, Estruturas de Repetição e Condicionais
+- Utilizar noções de Modularização no projeto
 - Criar um programa que consiga apresentar todo o cenário financeiro de uma pessoa de acordo com seus dados adicionados
 
 # Exemplo do Programa Funcionando
