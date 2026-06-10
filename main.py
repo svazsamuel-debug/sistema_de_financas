@@ -1,20 +1,42 @@
 from time import sleep
+
+cor = ('\033[m',          # 0 - Sem cor
+       '\033[1;30;41m',   # 1 - Vermelho
+       '\033[1;30;42m',   # 2 - Verde
+       '\033[7;3m',       # 3 - Branco
+       '\033[1;30;44m',   # 4 - Azul
+       '\033[1;30;45m',   # 5 - Roxo
+       )
+
+
 def titulo(msg):
-    print('-'*60)
-    print(msg.center(60))
-    print('-'*60)
+    texto('='*60, 3)
+    texto(msg.center(60), 3)
+    texto('='*60, 3)
+
+def texto(msg, cores = 0):
+    print(f'{cor[cores]} {msg.ljust(60)} {cor[0]}')
+
+
+menu = (
+    (1, 'Receita'),
+    (2, 'Despesa'),
+    (3, 'Saldo'),
+    (4, 'Extrato'),
+    (0, 'Sair')
+)
 
 
 # Programa Principal
-titulo('SISTEMA FINANCEIRO')
 saldo = 0
 movimentos = []
 while True:
-    print('1 - Receita')
-    print('2 - Despesa')
-    print('3 - Saldo')
-    print('4 - Extrato')
-    print('0 - Sair')
+    titulo('SISTEMA FINANCEIRO')
+    texto(f'{" " * 20} {"Nº":<5}{"OPÇÃO":<20}', 3)
+    texto('-'*60, 3)
+    for i, o in menu:
+        texto(f'{" " * 20} {i:<5}{o:<20}', 3)
+    texto('-'*60, 3)
     escolha = int(input('\nEscolha uma das opções: '))
     sleep(1)
     if escolha == 1:
@@ -38,7 +60,7 @@ while True:
             print(f'Não é possível realizar essa movimentação. Revise seu saldo.'
                   f'Saldo Atual R${saldo:.2f}')
         else:
-            desc = str(input('Descrição (alimentação, lazer, aluguel: '))
+            desc = str(input('Descrição (alimentação, lazer, aluguel): '))
             movimentos.append({"tipo" : "Despesa", "valor": des, "desc": desc})
             print('-'*60)
             print('Analisando...')
