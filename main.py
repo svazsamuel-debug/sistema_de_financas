@@ -35,7 +35,7 @@ while True:
         print('-'*60)
         time.sleep(1)
         saldo += receita
-        print(f'Saldo ATUAL R${saldo:.2f}')
+        ui.texto(f'Saldo ATUAL R${saldo:.2f}', 2)
         print('-'*60)
     elif escolha == 2:
         despesa = float(input('Digite o valor da Despesa R$'))
@@ -53,7 +53,7 @@ while True:
             print('-'*60)
             time.sleep(1)
             saldo -= despesa
-            print(f'Saldo atual R${saldo:.2f}')
+            ui.texto(f'Saldo atual R${saldo:.2f}', 1)
         print('-'*60)
     elif escolha == 3:
         time.sleep(1)
