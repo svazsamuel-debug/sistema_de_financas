@@ -23,9 +23,9 @@ while True:
     escolha = int(input('\nEscolha uma das opções: '))
     time.sleep(1)
     if escolha == 1:
-        rec = float(input('Digite o valor da Receita R$'))
-        desc = str(input('Descrição (salário, presente, freelance): '))
-        movimentos.append({"tipo": "Receita", "valor": rec, "desc": desc})
+        receita = float(input('Digite o valor da Receita R$'))
+        descricao = str(input('Descrição (salário, presente, freelance): '))
+        movimentos.append({"tipo": "Receita", "valor": receita, "desc": descricao})
         print('-'*60)
         print('Analisando...')
         print('-'*60)
@@ -34,25 +34,25 @@ while True:
         print(f'SALDO ANTERIOR R${saldo:.2f}')
         print('-'*60)
         time.sleep(1)
-        saldo += rec
+        saldo += receita
         print(f'Saldo ATUAL R${saldo:.2f}')
         print('-'*60)
     elif escolha == 2:
-        des = float(input('Digite o valor da Despesa R$'))
-        if des > saldo:
+        despesa = float(input('Digite o valor da Despesa R$'))
+        if despesa > saldo:
             print(f'Não é possível realizar essa movimentação. Revise seu saldo.'
                   f'Saldo Atual R${saldo:.2f}')
         else:
-            desc = str(input('Descrição (alimentação, lazer, aluguel): '))
-            movimentos.append({"tipo" : "Despesa", "valor": des, "desc": desc})
+            descricao = str(input('Descrição (alimentação, lazer, aluguel): '))
+            movimentos.append({"tipo" : "Despesa", "valor": despesa, "desc": descricao})
             print('-'*60)
             print('Analisando...')
             print('-'*60)
             time.sleep(1)
-            print(f'SALDO ANTERIOR R${saldo:.2f} e foi debitado o valor de R${des:.2f}.')
+            print(f'SALDO ANTERIOR R${saldo:.2f} e foi debitado o valor de R${despesa:.2f}.')
             print('-'*60)
             time.sleep(1)
-            saldo -= des
+            saldo -= despesa
             print(f'Saldo atual R${saldo:.2f}')
         print('-'*60)
     elif escolha == 3:
