@@ -1,5 +1,6 @@
 import time
 from apresentacao import ui
+from funcoes_calculo import movimentacoes
 
 menu = (
     (1, 'Receita'),
@@ -23,20 +24,9 @@ while True:
     escolha = int(input('\nEscolha uma das opções: '))
     time.sleep(1)
     if escolha == 1:
-        receita = float(input('Digite o valor da Receita R$'))
-        descricao = str(input('Descrição (salário, presente, freelance): '))
-        movimentos.append({"tipo": "Receita", "valor": receita, "desc": descricao})
-        print('-'*60)
-        print('Analisando...')
-        print('-'*60)
-        time.sleep(1)
-        print('-'*60)
-        print(f'SALDO ANTERIOR R${saldo:.2f}')
-        print('-'*60)
-        time.sleep(1)
-        saldo += receita
+        saldo = movimentacoes.adicionar_receita(saldo, movimentos)
         ui.texto(f'Saldo ATUAL R${saldo:.2f}', 2)
-        print('-'*60)
+        print('-' * 60)
     elif escolha == 2:
         despesa = float(input('Digite o valor da Despesa R$'))
         if despesa > saldo:

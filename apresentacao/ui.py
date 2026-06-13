@@ -1,3 +1,12 @@
+cor = ('\033[m',          # 0 - SEM COR
+       '\033[1;30;41m',   # 1 - VERMELHO
+       '\033[1;30;42m',   # 2 - VERDE
+       '\033[7;3m',       # 3 - BRANCO
+       '\033[1;30;44m',   # 4 - AZUL
+       '\033[1;30;45m',   # 5 - ROXO
+       )   
+
+
 def titulo(msg):
     '''
     titulo(msg)
@@ -27,12 +36,4 @@ def texto(msg, cores = 0):
     5 - Roxo
     Função criada por Samuel Vaz
     '''
-    print(f'{cor[cores]} {msg.ljust(60)} {cor[0]}')
-
-cor = ('\033[m',          # 0 - Sem cor
-       '\033[1;30;41m',   # 1 - Vermelho
-       '\033[1;30;42m',   # 2 - Verde
-       '\033[7;3m',       # 3 - Branco
-       '\033[1;30;44m',   # 4 - Azul
-       '\033[1;30;45m',   # 5 - Roxo
-       )    
+    print(f'{cor[cores]} {msg.ljust(60)} {cor[0]}') 
