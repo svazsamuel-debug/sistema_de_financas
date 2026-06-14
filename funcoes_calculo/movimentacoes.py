@@ -32,6 +32,7 @@ def adicionar_despesa(saldo, movimentos):
      Retorna: o novo saldo atualizado
      Função criada por Samuel Vaz
      '''
+
      despesa = float(input('Digite o valor da despesa: R$'))
 
      if despesa > saldo:
@@ -49,3 +50,24 @@ def adicionar_despesa(saldo, movimentos):
      saldo -= despesa
 
      return saldo
+
+
+def mostrar_saldo(saldo):
+    '''
+    Função para mostrar o saldo atual.
+    Parâmetros:
+    - saldo: valor atual do saldo
+    Retorna: None
+    Função criada por Samuel Vaz
+    '''
+
+    from time import sleep
+    from apresentacao import ui
+
+    sleep(0.5)
+    print('-'*60)
+    print('Calculando o saldo atual...')
+    print('-'*60)
+    sleep(0.5)
+    ui.texto(f'O saldo atual é de R${saldo:.2f}.', 5)
+    print('-'*60)

@@ -19,9 +19,11 @@ while True:
     ui.titulo('SISTEMA FINANCEIRO')
     ui.texto(f'{" " * 20} {"Nº":<5}{"OPÇÃO":<20}', 3)
     ui.texto('-'*60, 3)
+
     for i, o in menu:
         ui.texto(f'{" " * 20} {i:<5}{o:<20}', 3)
     ui.texto('-'*60, 3)
+    
     escolha = int(input('\nEscolha uma das opções: '))
     time.sleep(1)
 
@@ -38,13 +40,8 @@ while True:
         print('-' * 60)
 
     elif escolha == 3:
-        time.sleep(1)
-        print('-'*60)
-        print('Calculando o saldo atual...')
-        print('-'*60)
-        time.sleep(1)
-        print(f'O saldo atual é de R${saldo:.2f}.')
-        print('-'*60)
+        movimentacoes.mostrar_saldo(saldo)
+
     elif escolha == 4:
         time.sleep(1)
         print('-'*60)
