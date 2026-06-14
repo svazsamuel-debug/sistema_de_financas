@@ -14,6 +14,7 @@ menu = (
 # Programa Principal
 saldo = 0
 movimentos = []
+
 while True:
     ui.titulo('SISTEMA FINANCEIRO')
     ui.texto(f'{" " * 20} {"Nº":<5}{"OPÇÃO":<20}', 3)
@@ -23,28 +24,19 @@ while True:
     ui.texto('-'*60, 3)
     escolha = int(input('\nEscolha uma das opções: '))
     time.sleep(1)
+
     if escolha == 1:
         saldo = movimentacoes.adicionar_receita(saldo, movimentos)
+
         ui.texto(f'Saldo ATUAL R${saldo:.2f}', 2)
         print('-' * 60)
+
     elif escolha == 2:
-        despesa = float(input('Digite o valor da Despesa R$'))
-        if despesa > saldo:
-            print(f'Não é possível realizar essa movimentação. Revise seu saldo.'
-                  f'Saldo Atual R${saldo:.2f}')
-        else:
-            descricao = str(input('Descrição (alimentação, lazer, aluguel): '))
-            movimentos.append({"tipo" : "Despesa", "valor": despesa, "desc": descricao})
-            print('-'*60)
-            print('Analisando...')
-            print('-'*60)
-            time.sleep(1)
-            print(f'SALDO ANTERIOR R${saldo:.2f} e foi debitado o valor de R${despesa:.2f}.')
-            print('-'*60)
-            time.sleep(1)
-            saldo -= despesa
-            ui.texto(f'Saldo atual R${saldo:.2f}', 1)
-        print('-'*60)
+        saldo = movimentacoes.adicionar_despesa(saldo, movimentos)
+
+        ui.texto(f'SALDO ATUAL R${saldo:.2f}', 1)
+        print('-' * 60)
+
     elif escolha == 3:
         time.sleep(1)
         print('-'*60)
